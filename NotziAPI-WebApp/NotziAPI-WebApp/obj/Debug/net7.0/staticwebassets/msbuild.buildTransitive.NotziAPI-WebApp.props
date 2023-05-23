@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\NotziAPI-WebApp.props" />
+</Project>

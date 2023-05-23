@@ -1,0 +1,97 @@
+.page[b-xcysc8xlr3] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar[b-xcysc8xlr3] {
+    /*background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);*/
+    background-color: #121212;
+}
+.lightModeSidebar[b-xcysc8xlr3] {
+    /*background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);*/
+    background-color: lightgrey;
+}
+main[b-xcysc8xlr3] {
+    flex: 1;
+}
+
+.top-row[b-xcysc8xlr3] {
+    background-color: #121212;
+    justify-content: flex-end;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+    .top-row[b-xcysc8xlr3]  a, .top-row .btn-link[b-xcysc8xlr3] {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+    }
+
+    .top-row a:first-child[b-xcysc8xlr3] {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+.lightModeTop-row[b-xcysc8xlr3] {
+    background-color: lightgrey;
+    justify-content: flex-end;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+    .lightModeTop-row[b-xcysc8xlr3]  a, .top-row .btn-link[b-xcysc8xlr3] {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+    }
+
+    .lightModeTop-row a:first-child[b-xcysc8xlr3] {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+
+
+@media (max-width: 640.98px) {
+    .top-row:not(.auth)[b-xcysc8xlr3],
+    .lightModeTop-row:not(.auth)[b-xcysc8xlr3]{
+        display: none;
+    }
+
+    .top-row.auth[b-xcysc8xlr3],
+    .lightModeTop-row.auth[b-xcysc8xlr3]{
+        justify-content: space-between;
+    }
+
+    .top-row a[b-xcysc8xlr3], .top-row .btn-link[b-xcysc8xlr3],
+    .lightModeSidebar a[b-xcysc8xlr3], .lightModeTop-row a[b-xcysc8xlr3], .lightModeTop-row[b-xcysc8xlr3]{
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page[b-xcysc8xlr3] {
+        flex-direction: row;
+    }
+
+    .sidebar[b-xcysc8xlr3],
+    .lightModeSidebar[b-xcysc8xlr3] {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row[b-xcysc8xlr3],
+    .lightModeTop-row[b-xcysc8xlr3]{
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .top-row[b-xcysc8xlr3], article[b-xcysc8xlr3], .lightModeTop-row[b-xcysc8xlr3] {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}

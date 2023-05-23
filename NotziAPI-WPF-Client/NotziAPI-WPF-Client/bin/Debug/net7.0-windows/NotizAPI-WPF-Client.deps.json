@@ -1,0 +1,160 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "NotizAPI-WPF-Client/1.0.0": {
+        "dependencies": {
+          "MarkdownSharp": "2.0.5",
+          "MdXaml": "1.19.0"
+        },
+        "runtime": {
+          "NotizAPI-WPF-Client.dll": {}
+        }
+      },
+      "AvalonEdit/6.0.0": {
+        "runtime": {
+          "lib/netcoreapp3.0/ICSharpCode.AvalonEdit.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.0.0"
+          }
+        }
+      },
+      "MarkdownSharp/2.0.5": {
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/MarkdownSharp.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.5.27462"
+          }
+        }
+      },
+      "MdXaml/1.19.0": {
+        "dependencies": {
+          "AvalonEdit": "6.0.0",
+          "MdXaml.Plugins": "1.19.0"
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/MdXaml.dll": {
+            "assemblyVersion": "1.19.0.0",
+            "fileVersion": "1.19.0.0"
+          }
+        }
+      },
+      "MdXaml.Plugins/1.19.0": {
+        "runtime": {
+          "lib/net6.0-windows7.0/MdXaml.Plugins.dll": {
+            "assemblyVersion": "1.19.0.0",
+            "fileVersion": "1.19.0.0"
+          }
+        }
+      },
+      "Microsoft.NETCore.Platforms/2.0.0": {},
+      "System.Configuration.ConfigurationManager/4.5.0": {
+        "dependencies": {
+          "System.Security.Cryptography.ProtectedData": "4.5.0",
+          "System.Security.Permissions": "4.5.0"
+        }
+      },
+      "System.Security.AccessControl/4.5.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0",
+          "System.Security.Principal.Windows": "4.5.0"
+        }
+      },
+      "System.Security.Cryptography.ProtectedData/4.5.0": {},
+      "System.Security.Permissions/4.5.0": {
+        "dependencies": {
+          "System.Security.AccessControl": "4.5.0"
+        }
+      },
+      "System.Security.Principal.Windows/4.5.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0"
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NotizAPI-WPF-Client/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AvalonEdit/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QMbyJrlhOuWzLRPqvW724ly9XbSEkp8Xg2mQY7tvsh1se1pDEJnmDjS6c6OuqDe2Q37uCnXwKdV8tJUx2iLUnw==",
+      "path": "avalonedit/6.0.0",
+      "hashPath": "avalonedit.6.0.0.nupkg.sha512"
+    },
+    "MarkdownSharp/2.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9fJB4Vk1vRbh8re/1eaC3jEi8h0+VsZUl8C7TWzymjlGnfJUFrc4q103PrNoKm84NiOO4HziUaXqrXHSvLtZwg==",
+      "path": "markdownsharp/2.0.5",
+      "hashPath": "markdownsharp.2.0.5.nupkg.sha512"
+    },
+    "MdXaml/1.19.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xO0sWNUngCD++iOsjWzy44JFEug2jXljbmKXzzbqxa2zIhss1SdEOm00c9/LykCqavR9n96hGr72Sp1WXnwlsQ==",
+      "path": "mdxaml/1.19.0",
+      "hashPath": "mdxaml.1.19.0.nupkg.sha512"
+    },
+    "MdXaml.Plugins/1.19.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WBEpuyYfRZG9FilXCC7VZw1BFAT6lksXEdKfY+LN+5EUOdhbb2yXfegqONxM9YJNY9WNNTii5w7i2gSPob3Euw==",
+      "path": "mdxaml.plugins/1.19.0",
+      "hashPath": "mdxaml.plugins.1.19.0.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VdLJOCXhZaEMY7Hm2GKiULmn7IEPFE4XC5LPSfBVCUIA8YLZVh846gtfBJalsPQF2PlzdD7ecX7DZEulJ402ZQ==",
+      "path": "microsoft.netcore.platforms/2.0.0",
+      "hashPath": "microsoft.netcore.platforms.2.0.0.nupkg.sha512"
+    },
+    "System.Configuration.ConfigurationManager/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UIFvaFfuKhLr9u5tWMxmVoDPkFeD+Qv8gUuap4aZgVGYSYMdERck4OhLN/2gulAc0nYTEigWXSJNNWshrmxnng==",
+      "path": "system.configuration.configurationmanager/4.5.0",
+      "hashPath": "system.configuration.configurationmanager.4.5.0.nupkg.sha512"
+    },
+    "System.Security.AccessControl/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vW8Eoq0TMyz5vAG/6ce483x/CP83fgm4SJe5P8Tb1tZaobcvPrbMEL7rhH1DRdrYbbb6F0vq3OlzmK0Pkwks5A==",
+      "path": "system.security.accesscontrol/4.5.0",
+      "hashPath": "system.security.accesscontrol.4.5.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.ProtectedData/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wLBKzFnDCxP12VL9ANydSYhk59fC4cvOr9ypYQLPnAj48NQIhqnjdD2yhP8yEKyBJEjERWS9DisKL7rX5eU25Q==",
+      "path": "system.security.cryptography.protecteddata/4.5.0",
+      "hashPath": "system.security.cryptography.protecteddata.4.5.0.nupkg.sha512"
+    },
+    "System.Security.Permissions/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9gdyuARhUR7H+p5CjyUB/zPk7/Xut3wUSP8NJQB6iZr8L3XUXTMdoLeVAg9N4rqF8oIpE7MpdqHdDHQ7XgJe0g==",
+      "path": "system.security.permissions/4.5.0",
+      "hashPath": "system.security.permissions.4.5.0.nupkg.sha512"
+    },
+    "System.Security.Principal.Windows/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-U77HfRXlZlOeIXd//Yoj6Jnk8AXlbeisf1oq1os+hxOGVnuG+lGSfGqTwTZBoORFF6j/0q7HXIl8cqwQ9aUGqQ==",
+      "path": "system.security.principal.windows/4.5.0",
+      "hashPath": "system.security.principal.windows.4.5.0.nupkg.sha512"
+    }
+  }
+}

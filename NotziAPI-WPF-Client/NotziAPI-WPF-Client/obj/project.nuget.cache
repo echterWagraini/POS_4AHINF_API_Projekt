@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "9yjJfbUET13Zl8p/NhBHimZTNoizaFoGwrtBHM9aboVe35NJ3QUjUieeQgPxjyeZherG0m4eAfjv0Ej8ds8uzg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Flo\\OneDrive - HTL Saalfelden\\Schule\\4AHINF\\POS\\NotizAPI-POS\\NotziAPI-WPF-Client\\NotziAPI-WPF-Client\\NotizAPI-WPF-Client.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Flo\\.nuget\\packages\\avalonedit\\6.0.0\\avalonedit.6.0.0.nupkg.sha512",
+    "C:\\Users\\Flo\\.nuget\\packages\\markdownsharp\\2.0.5\\markdownsharp.2.0.5.nupkg.sha512",
+    "C:\\Users\\Flo\\.nuget\\packages\\mdxaml\\1.19.0\\mdxaml.1.19.0.nupkg.sha512",
+    "C:\\Users\\Flo\\.nuget\\packages\\mdxaml.plugins\\1.19.0\\mdxaml.plugins.1.19.0.nupkg.sha512",
+    "C:\\Users\\Flo\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\Flo\\.nuget\\packages\\system.configuration.configurationmanager\\4.5.0\\system.configuration.configurationmanager.4.5.0.nupkg.sha512",
+    "C:\\Users\\Flo\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
+    "C:\\Users\\Flo\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.5.0\\system.security.cryptography.protecteddata.4.5.0.nupkg.sha512",
+    "C:\\Users\\Flo\\.nuget\\packages\\system.security.permissions\\4.5.0\\system.security.permissions.4.5.0.nupkg.sha512",
+    "C:\\Users\\Flo\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

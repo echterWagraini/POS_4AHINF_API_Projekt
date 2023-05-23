@@ -1,0 +1,304 @@
+﻿@page "/"
+@inject Settings settings
+@using NotziAPI_WebAPP;
+@using MarkdownSharp;
+@using System.Text;
+@using Markdig;
+@using Smart.Blazor;
+
+<PageTitle>Index</PageTitle>
+
+@if (settings.darkMode)
+{
+    <link href="/css/NoteStylesheet.css" rel="stylesheet" />
+    <link href="/css/smart.dark.css" rel="stylesheet" />
+}
+else
+{
+    <link href="/css/LightModeNoteStylesheet.css" rel="stylesheet" />
+}
+
+@if (currentNotiz == null)
+{
+    <button @onclick="newNotizClick">New Note</button>
+    <button @onclick="saveClick">Save Notes</button>
+
+    <DropDownList Theme="custom" SelectionMode="ListSelectionMode.CheckBox" @bind-SelectedValues="@tagFilter">
+        @foreach (String t in tags)
+        {
+            <ListItem Value=@t>@t</ListItem>
+        }
+    </DropDownList>
+
+    <div class="grid-container">
+        @if (notes != null)
+        {
+            @foreach (Notiz n in notes)
+            {
+                @if(tagFilter.Contains(n.tag)||tagFilter.Count()==0){
+                    @if ((n.titel + n.text).Count() > 300)
+                    {
+                        <div class='note-card' @onclick="@(() => onNotizClick(n))">
+                            @(new MarkupString(Markdig.Markdown.ToHtml((settings.titleMDPrefix + n.titel + "\n\n" + n.text).Substring(0, 300) + "...")))
+                        </div>
+                    }
+                    else
+                    {
+                        <div class='note-card' @onclick="@(() => onNotizClick(n))">
+                            @(new MarkupString(Markdig.Markdown.ToHtml(settings.titleMDPrefix + n.titel + "\n\n" + n.text)))
+                        </div>
+                    }
+                }
+            }
+        }
+    </div>
+}
+@if (currentNotiz != null)
+{
+    <div>
+        @if (!edit)
+        {
+            <button @onclick="@(()=>onNotizClick(null))">Back</button>
+            <button @onclick="editClick">Edit</button>
+            <button @onclick="deleteClick">Delete</button>
+
+            @if (currentNotiz != null)
+            {
+                <div class='single-note'>
+                    @(new MarkupString(Markdig.Markdown.ToHtml(settings.titleMDPrefix + currentNotiz.titel + "\n\n" + currentNotiz.text + "\n\n---\nCreationDate: " + currentNotiz.creationDate + ((currentNotiz.tag != null) ? ("\n\nTag: " + currentNotiz.tag) : ""))))
+                </div>
+            }
+        }
+        else
+        {
+            <button @onclick="editClick">Apply</button>
+            if (!addTag)
+            {
+                <button style="margin-left:5px" @onclick="addNewTag">Add New Tag</button>
+            }
+            else
+            {
+                <input class="tagInput" placeholder="New Tag" @bind="newTagText">
+            }
+            <DropDownList Theme="custom" SelectionMode="ListSelectionMode.One" OnItemClick="dropdownSelectValue">
+                @foreach (String t in tags)
+                {
+                    if (currentNotiz.tag == t)
+                    {
+                        <ListItem Value=@t Selected>@t</ListItem>
+                    }
+                    else
+                    {
+                        <ListItem Value=@t >@t</ListItem>
+                    }
+                }
+            </DropDownList>
+            <br />
+            <div class='single-note'>
+                <input @bind="currentNotiz.titel">
+                <textarea draggable="false" @bind-value="MyText" @bind-value:event="oninput" Rows="@textAreaRows"></textarea>
+            </div>
+        }
+    </div>
+}
+
+@if (settings.apiUrl == null||!status)
+{
+     <span >The URL to your API can currently not be reached or you haven't set one! Visit <a href="settings"settings>Settings</a> to change that!</span>
+}
+@code
+{
+    List<Notiz> notes = new List<Notiz>();
+    List<String> tags = new List<String>();
+    String[] tagFilter = new string[] { };
+    string apiurl;
+    Notiz currentNotiz=null;
+    bool edit = false;
+    int textAreaRows;
+    bool status;
+    bool addTag = false;
+    String newTagText = "";
+
+    String selectedItem;
+
+    string noteText;
+    protected string MyText
+    {
+        get => noteText;
+        set
+        {
+            noteText = value;
+            CalculateSize(value);
+            currentNotiz.text = noteText;
+        }
+    }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        apiurl = settings.apiUrl + "/notiz";
+        loadNotes();
+        checkStatus();
+    }
+    protected void loadNotes()
+    {
+        try
+        {
+            HttpClient httpclient = new HttpClient();
+
+            string data = "";
+            data = httpclient.GetStringAsync(apiurl).Result;
+
+            notes = System.Text.Json.JsonSerializer.Deserialize<List<Notiz>>(data);
+
+            foreach(Notiz n in notes)
+            {
+                if (!tags.Contains(n.tag)&&n.tag!=null)
+                {
+                    tags.Add(n.tag);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+
+        }
+    }
+    protected void onNotizClick(Notiz n)
+    {
+        currentNotiz = n;
+        if (currentNotiz != null)
+        {
+            noteText = currentNotiz.text;
+            CalculateSize(noteText);
+        }
+    }
+    protected void newNotizClick()
+    {
+        Notiz n = new Notiz();
+        n.titel = "New Note";
+        n.text = "Click to edit";
+
+        notes.Add(n);
+
+        currentNotiz = notes[notes.Count - 1];
+        edit = true;
+    }
+    protected void saveClick()
+    {
+        try
+        {
+            HttpClient httpclient = new HttpClient();
+
+            string data2 = "";
+            data2 = httpclient.GetStringAsync(apiurl).Result;
+            var list = System.Text.Json.JsonSerializer.Deserialize<List<Notiz>>(data2);
+            for (int i = 0; i < notes.Count; i++)
+            {
+                Notiz n = notes[i];
+                if (n != null)
+                {
+                    var noteJson = System.Text.Json.JsonSerializer.Serialize(n);
+                    var requestContent = new StringContent(noteJson, Encoding.UTF8, "application/json");
+                    if (list.Find(x => x.id == n.id) != null)
+                    {
+                        var response = httpclient.PutAsync(apiurl +"/"+ n.id, requestContent);
+                    }
+                    else
+                    {
+                        var response = httpclient.PostAsync(apiurl, requestContent);
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+
+        }
+    }
+    protected void editClick()
+    {
+        if (!edit) //edit the text and title of the note
+        {
+            edit = true;
+        }
+        else //apply the made changes
+        {
+            if (newTagText!="")
+            {
+                if (!tags.Contains(newTagText))
+                {
+                    tags.Add(newTagText);
+                }
+                currentNotiz.tag = newTagText;
+                newTagText = "";
+            }
+            addTag = false;
+            edit = false;
+        }
+    }
+    private void CalculateSize(string value)
+    {
+        int temp;
+        temp = Math.Max(value.Split('\n').Length, value.Split('\r').Length);
+        temp = Math.Max(temp, ((value.Count() + ((value.Count(f => f == '\n')) * 155)) / 155) + 1);
+
+        textAreaRows = Math.Max(temp, 2);
+    }
+    protected void deleteClick()
+    {
+        try
+        {
+            if (currentNotiz != null)
+            {
+                saveClick();
+
+                HttpClient httpclient = new HttpClient();
+
+                var response = httpclient.DeleteAsync(apiurl + "/" + currentNotiz.id);
+
+                notes.Remove(currentNotiz);
+
+                onNotizClick(null);
+            }
+        }
+        catch (Exception ex)
+        {
+
+        }
+    }
+    protected void checkStatus()
+    {
+        try
+        {
+            HttpClient httpclient = new HttpClient();
+
+            string data = "";
+            data = httpclient.GetStringAsync(settings.apiUrl+"/status").Result;
+            if (data == null)
+            {
+                status = false;
+            }
+            else
+            {
+                status = true;
+            }
+        }
+        catch (Exception ex)
+        {
+
+        }
+    }
+    protected void dropdownSelectValue(Event e)
+    {
+        DropDownListItemClickEventDetail detail = e["Detail"];
+        if (detail.Value != null)
+        {
+            currentNotiz.tag = detail.Value;
+        }
+    }
+    protected void addNewTag()
+    {
+        addTag = true;
+    }
+}

@@ -1,0 +1,79 @@
+﻿@page "/settings"
+@inject Settings settings
+@using System.Net.Http.Json
+@using NotziAPI_WebAPP;
+@using System.Text;
+@using Smart.Blazor
+@inject NavigationManager navigationManager
+
+
+
+<PageTitle>Settings</PageTitle>
+@if (settings.darkMode)
+{
+    <link href="/css/SettingsStylesheet.css" rel="stylesheet" />
+}
+else
+{
+    <link href="/css/LightModeSettingsStylesheet.css" rel="stylesheet" />
+}
+
+<button @onclick="onApplyClick">Apply</button>
+
+    <h2>API</h2>
+    <div class="settingsDiv">
+        <p>URL to your API</p>
+        <input type="text" placeholder="e.g. http://localhost:4200" @bind="settings.apiUrl"/>
+    </div>
+
+    <h2>Appearance</h2>
+    <div class="settingsDiv">
+        <p>Dark Mode</p>
+        <SwitchButton @onclick="checkBoxChanged" @bind-Checked="@settings.darkMode"></SwitchButton>
+    </div>
+    <div class="settingsDiv">
+        <p>Formating of Note Titles</p>
+        <input type="text" @bind="settings.titleMDPrefix" />
+    </div>
+
+@code
+{
+    String titleMDPrefix;
+    String apiurl;
+    String settingsApiurl;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (settings.apiUrl != null)
+        {
+            apiurl = settings.apiUrl;
+        }
+
+        settingsApiurl = apiurl + "/settings";
+    }
+    protected void onApplyClick()
+    {
+        settingsApiurl = apiurl + "/settings";
+        saveSettings();
+        navigationManager.NavigateTo("settings");
+    }
+    protected void checkBoxChanged()
+    {
+        onApplyClick();
+    }
+    protected void saveSettings()
+    {
+        try
+        {
+            HttpClient httpclient = new HttpClient();
+            var noteJson = System.Text.Json.JsonSerializer.Serialize(settings);
+            var requestContent = new StringContent(noteJson, Encoding.UTF8, "application/json");
+            var response = httpclient.PostAsync(settingsApiurl, requestContent);
+
+        }
+        catch(Exception ex)
+        {
+
+        }
+    }
+}
