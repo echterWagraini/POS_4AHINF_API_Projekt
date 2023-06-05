@@ -458,7 +458,7 @@ Das finale Produkt dieses Semesterprojektes setzt sich aus drei separaten Progra
 	Eine simple WPF-Anwendung, welche mit der API interagiert. Die WPF-Anwendung ist eine simplere Variante der Website, welche sich auf die CRUD-Operationen beschränkt. Kann Notizen erstellen, speichern, ändern und löschen
 
 Der Projektverlauf lief grundsätzlich ohne gröbere Probleme. Der einfachste und am schnellsten erarbeitete Teil war die REST-API in Spring, da wir uns in diesem Jahr im Unterrichtsgegenstand DBI bereits im Detail mit solchen APIs auseinandersetzten. Auch die Blazor Website war, aufgrund von vorhandener Erfahrung durch das diesjährige SYP Projekt keine allzu große Herausforderung. Die meisten Probleme gab es bei der WPF-Anwendung, da mir persönlich die Erfahrung mit WPF fehlt, da ich WPF vor diesem Projekt noch nie in diesem Ausmaß genutzt habe. Jedoch waren auch hier die Probleme durch Recherche im Interne relativ leicht zu lösen, besonders hilfreich war hierbei StackOverflow. Ein großer Vorteil der verwendeten Technologien war es, dass die beiden Clients in C# implementiert wurden, was bedeutet, dass manche simple Code-Stellen in den Clients fast ident sind und ich mir daher eine Menge an nachdenken ersparen konnte.
-## Quellenverzeichnis / Links 
+## Quellenverzeichnis/Links 
 * https://learn.microsoft.com/en-us/dotnet/desktop/wpf/?view=netdesktop-7.0
 * https://stackoverflow.com/
 * https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor
