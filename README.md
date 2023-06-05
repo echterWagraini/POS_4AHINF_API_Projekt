@@ -334,7 +334,7 @@ Parameter der Notizen
 			"creationDate":string
 			"tag": string
 		}]
-
+</details>
  <details>
  <summary><code>GET</code> <code><b>/notiz/{id}</b></code> <code>gibt die Notiz mit dern angegebenen id {id} zurueck</code></summary></summary>
 	 Parameters
@@ -358,6 +358,7 @@ Parameter der Notizen
  			"creationDate":string,
  			"tag":string
 		}
+ </details>
  <details>
  <summary><code>Post</code> <code><b>/notiz</b></code> <code>speichert eine neue Notiz</code></summary></summary>
 	 Parameters
@@ -371,6 +372,7 @@ Parameter der Notizen
 	 |content-type        | response example / description                                                      |
 	|---------------------|--------------------------------------------------------------------------------|
 	|`json string`        | `{"success":"true","message":"Notiz has been added successfully"}`                             |
+ </details>
  <details>
  <summary><code>PUT</code> <code><b>/notiz</b></code> <code>updatet eine bereits vorhandene Notiz</code></summary></summary>
 	 Parameters
@@ -384,6 +386,7 @@ Parameter der Notizen
 	 |content-type        | response example / description                                                      |
 	|---------------------|--------------------------------------------------------------------------------|
 	|`json string`        | `{"success":"true","message":"Notiz has been updated successfully"}`                             |
+ </details>
  <details>
  <summary><code>DELETE</code> <code><b>/notiz/{id}</b></code> <code>löscht eine Notiz</code></summary></summary>
 	Parameters
@@ -397,6 +400,8 @@ Parameter der Notizen
 	 |content-type        | response example / description                                                      |
 	|---------------------|--------------------------------------------------------------------------------|
 	|`json string`        | `{"success":"true","message":"Notiz has been deleted successfully"}`                             |
+
+</details>
 #### Settings über /settings
 Mit /settings kann man die gespeicherten Einstellungen Verändern oder auslesen.
 
@@ -406,7 +411,9 @@ Parameter der Settings
 	|--------------- |--------------------|-------------|---------------------------------------------|
 	| `darkMode`                  |  - | bool         | bestimmt über das Theme des Clients                                        |
 	| `titelMDPrefix`             |  -            | string         | Markdown Formatierung des Titels im Client|
+	
 ##### Verwendung:
+
  <details>
  <summary><code>GET</code> <code><b>/settings</b></code> <code>gibt die derzeitigen Settings zurück</code></summary></summary>
 	Responses
@@ -421,6 +428,7 @@ Parameter der Settings
  			"dakrmode":bool,
  			"titelMDPrefix":string
 		}
+ </details>
  <details>
  <summary><code>PUT</code> <code><b>/settings</b></code> <code>updatet die gespeicherten Settings</code></summary></summary>
 	Parameters
@@ -434,6 +442,8 @@ Parameter der Settings
 	 |content-type        | response example / description                                                      |
 	|---------------------|--------------------------------------------------------------------------------|
 	|`json string`        | `{"success":"true","message":"Settings have been updated successfully"}`                             |
+</details>
+
 ## Diskussion
 Das finale Produkt dieses Semesterprojektes setzt sich aus drei separaten Programmen zusammen: 
 - Notiz API
