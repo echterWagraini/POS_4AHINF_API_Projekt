@@ -295,6 +295,7 @@ Das Datenaustausch-Format um mit der API zu kommunizieren ist JSON
 		|------------------------|--------------------------------------------------|
 		|`json string`  | `{"success":"true","message":"Das Service ist verfügbar!"}`        |
 		
+</details>		
 #### Notizen über /notiz
 /notiz ist der Endpunkt um die Notizen zu speichern, auszulesen, zu ändern oder zu löschen.
 
