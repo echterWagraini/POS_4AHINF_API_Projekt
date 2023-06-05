@@ -401,7 +401,8 @@ Parameter der Notizen
 	|---------------------|--------------------------------------------------------------------------------|
 	|`json string`        | `{"success":"true","message":"Notiz has been deleted successfully"}`                             |
 
-</details>
+</details>#
+
 #### Settings über /settings
 Mit /settings kann man die gespeicherten Einstellungen Verändern oder auslesen.
 
