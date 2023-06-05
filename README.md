@@ -287,7 +287,7 @@ Das Datenaustausch-Format um mit der API zu kommunizieren ist JSON
  /status stellt einen Health Check für die API dar
 
 ##### Verwendung:
-- <details>
+<details>
  <summary><code>GET</code> <code><b>/status</b></code> <code>gibt den Status der API zurueck</code></summary></summary>
 	Response
 	
