@@ -319,6 +319,7 @@ Responses
 |content-type             | response example / description                                       |
 |-------------------------|-----------------------------------------------------------|
 |`json string`       | `JSON Liste aller Notizen`                                                          |
+
 Sample Response:
 	
 	[{
