@@ -288,14 +288,15 @@ Das Datenaustausch-Format um mit der API zu kommunizieren ist JSON
 
 ##### Verwendung:
 <details>
- <summary><code>GET</code> <code><b>/status</b></code> <code>gibt den Status der API zurueck</code></summary></summary>
+ 	<summary><code>GET</code> <code><b>/status</b></code> <code>gibt den Status der API zurueck</code></summary></summary>
 	Response
 	
 	|content-type              | response example / description            |               
-		|------------------------|--------------------------------------------------|
-		|`json string`  | `{"success":"true","message":"Das Service ist verfügbar!"}`        |
+	|------------------------|--------------------------------------------------|
+	|`json string`  | `{"success":"true","message":"Das Service ist verfügbar!"}`        |
 		
-</details>		
+</details>
+
 #### Notizen über /notiz
 /notiz ist der Endpunkt um die Notizen zu speichern, auszulesen, zu ändern oder zu löschen.
 
