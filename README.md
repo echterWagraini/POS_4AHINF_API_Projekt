@@ -6,7 +6,7 @@ Das diesjährige Semesterprojekt im Fach Programmieren und Softwareentwicklung (
 - [Beschreibung der Software](#beschreibung-der-software)
 - [API Beschreibung](#api-beschreibung)
 - [Diskussion](#diskussion)
-- [Quellenverzeichnis / Links](#quellenverzeichnis-/-links)
+- [Quellenverzeichnis / Links](#Quellenverzeichnis-/-Links )
 ## Softwaredesign
 
 Dieses Projekt beinhaltet eine API um Notizen zu Verwatlen, sowie zwei Clients, eine WPF-Anwendung und eine Website umgesetzt mit .net Blazor-WebAssembly.
