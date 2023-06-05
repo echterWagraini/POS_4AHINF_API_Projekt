@@ -5,6 +5,7 @@
 @using System.Text;
 @using Markdig;
 @using Smart.Blazor;
+@inject IJSRuntime JSRuntime
 
 <PageTitle>Index</PageTitle>
 
@@ -245,10 +246,13 @@ else
 
         textAreaRows = Math.Max(temp, 2);
     }
-    protected void deleteClick()
+    protected async void deleteClick()
     {
         try
         {
+            if (!await JSRuntime.InvokeAsync<bool>("confirm", $"Are you sure you want to delete "+currentNotiz.titel+"?"))
+                return;
+
             if (currentNotiz != null)
             {
                 saveClick();
@@ -260,6 +264,7 @@ else
                 notes.Remove(currentNotiz);
 
                 onNotizClick(null);
+                StateHasChanged();
             }
         }
         catch (Exception ex)

@@ -6,7 +6,7 @@ namespace NotziAPI_WebApp
 {
     public class Settings
     {
-        public String id { get; set; }
+        //public String id { get; set; }
         public bool darkMode { get; set; }
 
         public string titleMDPrefix { get; set; }
@@ -34,16 +34,16 @@ namespace NotziAPI_WebApp
                 {
                     this.titleMDPrefix = "# ";
                 }
-                this.id = "1";
+                //this.id = "1";
             }
             catch (Exception ex)
             {
 
             }
         }
-        public Settings(String id, bool dakrMode, string titleMDPrefix)
+        public Settings(bool dakrMode, string titleMDPrefix)
         {
-            this.id = id;
+            //this.id = id;
             this.darkMode = dakrMode;
             this.titleMDPrefix = titleMDPrefix;
         }
