@@ -308,7 +308,7 @@ Parameter der Notizen
 	| `tag` |  -            | string         | tag um Notizen zu Kategorisieren           |
 ##### Verwendung: 
 
- - <details>
+ <details>
  <summary><code>GET</code> <code><b>/notiz</b></code> <code>gibt eine Liste aller Notizen zurueck</code></summary></summary>
 	Responses
 	
@@ -332,7 +332,7 @@ Parameter der Notizen
 			"tag": string
 		}]
 
- - <details>
+ <details>
  <summary><code>GET</code> <code><b>/notiz/{id}</b></code> <code>gibt die Notiz mit dern angegebenen id {id} zurueck</code></summary></summary>
 	 Parameters
 
@@ -355,7 +355,7 @@ Parameter der Notizen
  			"creationDate":string,
  			"tag":string
 		}
- -  <details>
+ <details>
  <summary><code>Post</code> <code><b>/notiz</b></code> <code>speichert eine neue Notiz</code></summary></summary>
 	 Parameters
 
@@ -368,7 +368,7 @@ Parameter der Notizen
 	 |content-type        | response example / description                                                      |
 	|---------------------|--------------------------------------------------------------------------------|
 	|`json string`        | `{"success":"true","message":"Notiz has been added successfully"}`                             |
- -  <details>
+ <details>
  <summary><code>PUT</code> <code><b>/notiz</b></code> <code>updatet eine bereits vorhandene Notiz</code></summary></summary>
 	 Parameters
 
@@ -381,7 +381,7 @@ Parameter der Notizen
 	 |content-type        | response example / description                                                      |
 	|---------------------|--------------------------------------------------------------------------------|
 	|`json string`        | `{"success":"true","message":"Notiz has been updated successfully"}`                             |
- -  <details>
+ <details>
  <summary><code>DELETE</code> <code><b>/notiz/{id}</b></code> <code>löscht eine Notiz</code></summary></summary>
 	Parameters
 
@@ -404,7 +404,7 @@ Parameter der Settings
 	| `darkMode`                  |  - | bool         | bestimmt über das Theme des Clients                                        |
 	| `titelMDPrefix`             |  -            | string         | Markdown Formatierung des Titels im Client|
 ##### Verwendung:
- -  <details>
+ <details>
  <summary><code>GET</code> <code><b>/settings</b></code> <code>gibt die derzeitigen Settings zurück</code></summary></summary>
 	Responses
 	
@@ -418,7 +418,7 @@ Parameter der Settings
  			"dakrmode":bool,
  			"titelMDPrefix":string
 		}
- -  <details>
+ <details>
  <summary><code>PUT</code> <code><b>/settings</b></code> <code>updatet die gespeicherten Settings</code></summary></summary>
 	Parameters
 
