@@ -403,7 +403,7 @@ Responses
 |---------------------|--------------------------------------------------------------------------------|
 |`json string`        | `{"success":"true","message":"Notiz has been deleted successfully"}`                             |
 
-</details>#
+</details>
 
 #### Settings über /settings
 Mit /settings kann man die gespeicherten Einstellungen Verändern oder auslesen.
@@ -442,7 +442,7 @@ Parameter der Settings
 
 Responses
 	
- |content-type        | response example / description                                                      |
+|content-type        | response example / description                                                      |
 |---------------------|--------------------------------------------------------------------------------|
 |`json string`        | `{"success":"true","message":"Settings have been updated successfully"}`                             |
 </details>
