@@ -303,45 +303,46 @@ Das Datenaustausch-Format um mit der API zu kommunizieren ist JSON
 Parameter der Notizen
 
 | name   |  type      | data type      | description                                          
-	|--------------- |--------------------|-------------|---------------------------------------------|
-	| `id`                  |  auto generated  | string         | Einzigartige ID                                          |
-	| `titel`             |  -            | string         | Titel der Notiz                                          |
-	| `text`               |  -            | string         | Text der Notiz                                          |
-	| `creationDate` |  -            | string         | Datum und Uhrzeit der Erstellung           |
-	| `tag` |  -            | string         | tag um Notizen zu Kategorisieren           |
+|--------------- |--------------------|-------------|---------------------------------------------|
+| `id`                  |  auto generated  | string         | Einzigartige ID                                          |
+| `titel`             |  -            | string         | Titel der Notiz                                          |
+| `text`               |  -            | string         | Text der Notiz                                          |
+| `creationDate` |  -            | string         | Datum und Uhrzeit der Erstellung           |
+| `tag` |  -            | string         | tag um Notizen zu Kategorisieren           |
+
 ##### Verwendung: 
 
  <details>
  <summary><code>GET</code> <code><b>/notiz</b></code> <code>gibt eine Liste aller Notizen zurueck</code></summary></summary>
 	Responses
 	
-	|content-type             | response example / description                                       |
-	 |-------------------------|-----------------------------------------------------------|
-	 |`json string`       | `JSON Liste aller Notizen`                                                          |
+|content-type             | response example / description                                       |
+|-------------------------|-----------------------------------------------------------|
+|`json string`       | `JSON Liste aller Notizen`                                                          |
 	Sample Response:
 	
-		[{
- 			"id":string,
- 			"titel":string,
- 			"text":string,
- 			"creationDate":string,
- 			"tag":string
-		},
-		{
-			"id":string,
-			"titel":string,
-			"text":string,
-			"creationDate":string
-			"tag": string
-		}]
+[{
+	"id":string,
+	"titel":string,
+	"text":string,
+	"creationDate":string,
+	"tag":string
+},
+{
+	"id":string,
+	"titel":string,
+	"text":string,
+	"creationDate":string
+	"tag": string
+}]
 </details>
  <details>
  <summary><code>GET</code> <code><b>/notiz/{id}</b></code> <code>gibt die Notiz mit dern angegebenen id {id} zurueck</code></summary></summary>
 	 Parameters
 
-	| data type      | type                | format                  | description                                   |
-	|---------------|-----------------|----------------------------|-------------------------------|
-	| String             | Path  | String  | {id} der gewünschten Notiz  |
+| data type      | type                | format                  | description                                   |
+|---------------|-----------------|----------------------------|-------------------------------|
+| String             | Path  | String  | {id} der gewünschten Notiz  |
 	 
 	 Responses
 	
