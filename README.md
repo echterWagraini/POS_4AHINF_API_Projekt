@@ -314,12 +314,12 @@ Parameter der Notizen
 
  <details>
  <summary><code>GET</code> <code><b>/notiz</b></code> <code>gibt eine Liste aller Notizen zurueck</code></summary></summary>
-	Responses
+Responses
 	
 |content-type             | response example / description                                       |
 |-------------------------|-----------------------------------------------------------|
 |`json string`       | `JSON Liste aller Notizen`                                                          |
-	Sample Response:
+Sample Response:
 	
 	[{
 		"id":string,
@@ -338,17 +338,17 @@ Parameter der Notizen
 </details>
  <details>
  <summary><code>GET</code> <code><b>/notiz/{id}</b></code> <code>gibt die Notiz mit dern angegebenen id {id} zurueck</code></summary></summary>
-	 Parameters
+ Parameters
 
 | data type      | type                | format                  | description                                   |
 |---------------|-----------------|----------------------------|-------------------------------|
 | String             | Path  | String  | {id} der gewünschten Notiz  |
 	 
-	 Responses
+ Responses
 	
 |content-type             | response example / description                                       |
- |-------------------------|-----------------------------------------------------------|
- |`json string`       | `JSON Objekt der gewünschten Notiz`                                                          |
+|-------------------------|-----------------------------------------------------------|
+|`json string`       | `JSON Objekt der gewünschten Notiz`                                                          |
 	 
  Sample Respone: 
 
@@ -368,7 +368,7 @@ Parameter der Notizen
 |---------------|-----------------|----------------------------|-------------------------------|
 | Notiz             | Requestbody   | object (JSON)   | Json Objekt der Notiz  |
 
-	Responses
+Responses
 	
 |content-type        | response example / description                                                      |
 |---------------------|--------------------------------------------------------------------------------|
@@ -376,13 +376,13 @@ Parameter der Notizen
  </details>
  <details>
  <summary><code>PUT</code> <code><b>/notiz</b></code> <code>updatet eine bereits vorhandene Notiz</code></summary></summary>
-	 Parameters
+ Parameters
 
 | data type | type           | format                | description                   |
 |---------------|-----------------|-----------------------|-------------------------|
 | Notiz          | Requestbody   | object (JSON)   | Json Objekt der Notiz  |
 
-	Responses
+Responses
 	
 |content-type        | response example / description                                                      |
 |---------------------|--------------------------------------------------------------------------------|
@@ -396,7 +396,7 @@ Parameter der Notizen
 |---------------|-----------------|-----------------------|-------------------------|
 | String          | Path   | String   | {id} der zu loeschenden Notiz  |
 
-	Responses
+Responses
 	
 |content-type        | response example / description                                                      |
 |---------------------|--------------------------------------------------------------------------------|
@@ -439,7 +439,7 @@ Parameter der Settings
 |---------------|-----------------|-----------------------|-------------------------|
 | Settings          | Requestbody   | object (JSON)   | Json Objekt der Settings  |
 
-	Responses
+Responses
 	
  |content-type        | response example / description                                                      |
 |---------------------|--------------------------------------------------------------------------------|
